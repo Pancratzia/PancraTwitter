@@ -1,0 +1,24 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+html{
+    /*1rem=16px*/
+    font-size: 62.5%;
+}
+
+/*Página Principal*/
+
+section.main-page{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr min-content;
+}
