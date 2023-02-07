@@ -2,6 +2,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    list-style: none;
 }
 
 a{
@@ -115,14 +116,14 @@ section.main-page{
     border-radius: 9999px;
 }
 
-.right-middle-content .sing-up-btn{
+.right-middle-content .sign-up-btn{
     background-color: #490a77;
     color: white;
     border: 0.1rem solid rgba(0, 0, 0, 0);
     transition: background-color 0.3s ease-in-out;
 }
 
-.right-middle-content .sing-up-btn:hover{
+.right-middle-content .sign-up-btn:hover{
     background-color: #30064e;
 }
 

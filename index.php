@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PancraTwitter</title>
-    <link rel="stylesheet" href="frontend/assets/css/styles.css">
-</head>
-
+<?php require_once('backend/shared/header.php'); ?>
 <body>
 
     <section class="main-page">
@@ -40,7 +30,7 @@
                     </h2>
                     <h5>¡Únete al PancraTwitter!</h5>
                     <div class="s-in-wrapper">
-                        <a href="singup.php" class="btn-link sing-up-btn">Regístrate</a>
+                        <a href="signup.php" class="btn-link sign-up-btn">Regístrate</a>
                         <a href="login.php" class="btn-link log-in-btn">Iniciar Sesión</a>
                     </div>
                 </div>
@@ -60,7 +50,6 @@
                 <a href="#">Estado</a>
                 <a href="#">Carrera</a>
                 <a href="#">Marca y Recursos</a>
-                <a href="#">Publicidad</a>
                 <a href="#">Marketing</a>
                 <a href="#">PancraTwitter Premium</a>
                 <a href="#">Desarrolladores</a>
