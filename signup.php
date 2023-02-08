@@ -3,30 +3,8 @@
 
 <body>
     <section class="sign-container">
-        <nav class="nav-header-sign__up">
-            <ul class="wena">
-                <li>
-                    <a href="index.php">
-                        <i class="fa fa-twitter"></i>
-                        Página Principal
-                    </a>
-                </li>
 
-                <li>
-                    <a href="#">
-                        Sobre Nosotros
-                    </a>
-                </li>
-
-                <li>
-                    <a href="index.php">
-                        Idioma: Español
-                    </a>
-                </li>
-
-            </ul>
-        </nav>
-
+    <?php require_once('backend/shared/sign_nav.php'); ?>
         <div class="form-container">
             <div class="form-content">
                 <div class="header-form-content">
@@ -56,13 +34,14 @@
                     </div>
 
                     <div class="s-password">
-                        <input type="checkbox" id="s-password" class="form-checkbox">
+                        <input type="checkbox" id="s-password" class="form-checkbox" >
+                        <span class="checkmark"></span>
                         <label for="s-password">Mostrar Contraseña</label>
                     </div>
-
                     <div class="form-btn-wrapper">
                         <button type="submit" class="btn-form">Registrarse</button>
-                        <input type="checkbox" name="remember" id="check">
+                        <input type="checkbox" class="form-checkbox" name="remember" id="check">
+                        <span class="checkmark"></span>
                         <label for="check">Recordar Usuario</label>
                     </div>
 
@@ -72,6 +51,7 @@
                 <p>¿Ya tienes una cuenta? <a href="login.php">Ingresa Aquí</a></p>
             </footer>
         </div>
+        <div class="margin-bottom-div"></div>
     </section>
 </body>
 

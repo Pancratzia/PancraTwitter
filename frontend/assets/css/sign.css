@@ -4,19 +4,22 @@ section.sign-container{
     height: 100vh;
     width: 100%;
     grid-template-rows: repeat(2,min-content) 1fr;
+    grid-auto-flow: column;
     row-gap: 1.5rem;
 }
+/*NAV*/
 
 .sign-container nav.nav-header-sign__up{
     grid-column: 1/4;
     grid-row: 1/2;
     padding: 2rem 0;
+    width: 100%;
     box-shadow: 0 0 0.7rem rgba(0,0,0,0.3);
 }
 
 nav.nav-header-sign__up ul{
     display: flex;
-    width: 100rem;
+    width: 100%;
     align-items: flex-end;
     margin: auto;
 }
@@ -55,3 +58,107 @@ nav.nav-header-sign__up ul li:last-child{
 .nav-header-sign__up li:hover::after{
     opacity: 1;
 }
+
+/*FORM*/
+
+.form-container{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    background-color: white;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+    max-width: 100rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 10rem 8fr;
+    grid-template-rows: 2fr 100px;
+    
+}
+form-container{
+    padding-bottom: 3rem;
+}
+
+.form-container .form-content{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    padding: 5rem 0 1rem 0;
+}
+
+.header-form-content h2{
+    font-size: 2.4rem;
+    margin-bottom: 3rem;
+}
+
+.formField{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group{
+    margin-bottom: 2rem;
+}
+
+.form-group label{
+    font-size: 1.6rem;
+    font-weight: 300;
+}
+
+input:not(.form-checkbox){
+    width: 30rem;
+    display: block;
+    height: 3.5rem;
+    border: 0.1rem solid #ddd;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    padding-left: 1rem;
+}
+
+.s-password{
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+}
+
+.form-btn-wrapper .btn-form{
+    padding: 1rem 1.5rem;
+    background-color: #490a77;
+    color: white;
+    border: .1rem solid #490a77;
+    border-radius: 4rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 1rem;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.form-btn-wrapper .btn-form:hover{
+    background-color: #30064e;
+}
+
+.form-btn-wrapper label{
+    font-size: 1.6rem;
+}
+/*footer*/
+
+.form-footer{
+    grid-column: 1/-1;
+    grid-row: 3/-1;
+    padding: 20px;
+    background-color: #edf3f7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.form-footer{
+    font-size: 1.6rem;
+}
+
+.form-footer a{
+    color: #490a77;
+}
+.form-footer a:hover{
+    text-decoration: underline;
+}
+
+
