@@ -1,4 +1,8 @@
-<?php require_once('backend/shared/header.php'); ?>
+<?php
+require_once('backend/initialize.php');
+require_once('backend/shared/header.php'); 
+
+?>
 <body>
 
     <section class="main-page">
