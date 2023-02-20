@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 20-02-2023 a las 23:26:08
+-- Tiempo de generación: 20-02-2023 a las 23:55:38
 -- Versión del servidor: 5.7.40
 -- Versión de PHP: 8.0.26
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `firstName` varchar(25) COLLATE utf8_spanish_ci NOT NULL,
   `lastName` varchar(25) COLLATE utf8_spanish_ci NOT NULL,
-  `username` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `username` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
   `email` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `password` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `profileImage` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
