@@ -8,7 +8,8 @@ if(is_post_request()){
     $pass = formSanitizer::formSanitizerString($_POST['pass']);
     $cpass = formSanitizer::formSanitizerString($_POST['cpass']);
 
-    $username = "TEMP";
+    $username = $account->generateUsername($firstName, $lastName);
+    echo $username;
     
     $account ->register($firstName, $lastName, $username, $email, $pass, $cpass);
 }
