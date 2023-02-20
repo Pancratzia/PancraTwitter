@@ -161,4 +161,11 @@ input:not(.form-checkbox){
     text-decoration: underline;
 }
 
+span.errorMessage{
+    display: block;
+    color: red;
+    font-size: 1rem;
+    margin-bottom: 1.3rem;
+}
+
 

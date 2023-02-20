@@ -7,7 +7,10 @@ if(is_post_request()){
     $email = formSanitizer::formSanitizerString($_POST['email']);
     $pass = formSanitizer::formSanitizerString($_POST['pass']);
     $cpass = formSanitizer::formSanitizerString($_POST['cpass']);
+
+    $username = "TEMP";
     
+    $account ->register($firstName, $lastName, $username, $email, $pass, $cpass);
 }
 
 ?>
@@ -27,6 +30,7 @@ if(is_post_request()){
                 <form action="signup.php" class="formfield" method="POST">
 
                     <div class="form-group">
+                        <?php echo $account->getErrorMessage(Constant::$firstNameCharacters)?>
                         <label for="firstName">Nombre</label>
                         <input type="text" name="firstName" id="firstName" required autocomplete="off">
                     </div>
