@@ -21,7 +21,7 @@ if(is_post_request()){
 <body>
     <section class="sign-container">
 
-    <?php require_once('backend/shared/sign_nav.php'); ?>
+        <?php require_once('backend/shared/sign_nav.php'); ?>
         <div class="form-container">
             <div class="form-content">
                 <div class="header-form-content">
@@ -35,6 +35,7 @@ if(is_post_request()){
                         <input type="text" name="firstName" id="firstName" required autocomplete="off">
                     </div>
                     <div class="form-group">
+                        <?php echo $account->getErrorMessage(Constant::$lastNameCharacters)?>
                         <label for="lastName">Apellido</label>
                         <input type="text" name="lastName" id="lastName" required autocomplete="off">
                     </div>
