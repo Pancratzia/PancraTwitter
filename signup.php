@@ -1,3 +1,12 @@
+<?php
+require_once('backend/initialize.php');
+if(is_post_request()){
+    $firstName = $_POST['firstName'];
+    echo $firstName;
+}
+
+?>
+
 <?php $pageTitle='SignUp | PancraTwitter'?>
 <?php require_once('backend/shared/header.php'); ?>
 
@@ -10,7 +19,7 @@
                 <div class="header-form-content">
                     <h2>Crea tu cuenta</h2>
                 </div>
-                <form action="sign.php" class="formfield">
+                <form action="signup.php" class="formfield" method="POST">
 
                     <div class="form-group">
                         <label for="firstName">Nombre</label>
@@ -34,7 +43,7 @@
                     </div>
 
                     <div class="s-password">
-                        <input type="checkbox" id="s-password" class="form-checkbox" >
+                        <input type="checkbox" id="s-password" class="form-checkbox" onclick="showPassword()">
                         <span class="checkmark"></span>
                         <label for="s-password">Mostrar Contraseña</label>
                     </div>
@@ -53,6 +62,8 @@
         </div>
         <div class="margin-bottom-div"></div>
     </section>
+    <script src="frontend\assets\js\showPassword.js"></script>
+
 </body>
 
 </html>

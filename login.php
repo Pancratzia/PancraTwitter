@@ -21,7 +21,7 @@
                         <input type="password" name="pass" id="pass" required autocomplete="off">
                     </div>
                     <div class="s-password">
-                        <input type="checkbox" id="s-password" class="form-checkbox">
+                        <input type="checkbox" id="s-password" class="form-checkbox" onclick="showLoginPass()">
                         <span class="checkmark"></span>
                         <label for="s-password">Mostrar Contraseña</label>
                     </div>
@@ -40,6 +40,8 @@
         </div>
         <div class="margin-bottom-div"></div>
     </section>
+
+    <script src="frontend\assets\js\showPassword.js"></script>
 </body>
 
 </html>
