@@ -1,8 +1,13 @@
 <?php
+
 require_once('backend/initialize.php');
 if(is_post_request()){
-    $firstName = $_POST['firstName'];
-    echo $firstName;
+    $firstName = formSanitizer::formSanitizerName($_POST['firstName']);
+    $lastName = formSanitizer::formSanitizerName($_POST['lastName']);
+    $email = formSanitizer::formSanitizerString($_POST['email']);
+    $pass = formSanitizer::formSanitizerString($_POST['pass']);
+    $cpass = formSanitizer::formSanitizerString($_POST['cpass']);
+    
 }
 
 ?>
