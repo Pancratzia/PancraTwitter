@@ -9,7 +9,6 @@ if(is_post_request()){
     $cpass = formSanitizer::formSanitizerString($_POST['cpass']);
 
     $username = $account->generateUsername($firstName, $lastName);
-    echo $username;
     
     $account ->register($firstName, $lastName, $username, $email, $pass, $cpass);
 }
@@ -31,26 +30,32 @@ if(is_post_request()){
                 <form action="signup.php" class="formfield" method="POST">
 
                     <div class="form-group">
-                        <?php echo $account->getErrorMessage(Constant::$firstNameCharacters)?>
                         <label for="firstName">Nombre</label>
                         <input type="text" name="firstName" id="firstName" required autocomplete="off">
+                        <?php echo $account->getErrorMessage(Constant::$firstNameCharacters)?>
                     </div>
                     <div class="form-group">
-                        <?php echo $account->getErrorMessage(Constant::$lastNameCharacters)?>
                         <label for="lastName">Apellido</label>
                         <input type="text" name="lastName" id="lastName" required autocomplete="off">
+                        <?php echo $account->getErrorMessage(Constant::$lastNameCharacters)?>
                     </div>
                     <div class="form-group">
                         <label for="email">Correo</label>
                         <input type="email" name="email" id="email" required autocomplete="off">
+                        <?php echo $account->getErrorMessage(Constant::$emailInUse)?>
+                        <?php echo $account->getErrorMessage(Constant::$emailInvalid)?>
                     </div>
                     <div class="form-group">
                         <label for="pass">Contraseña</label>
                         <input type="password" name="pass" id="pass" required autocomplete="off">
+                        <?php echo $account->getErrorMessage(Constant::$passNotMatch)?>
+                        <?php echo $account->getErrorMessage(Constant::$passwordNotAlphanumeric)?>
+                        <?php echo $account->getErrorMessage(Constant::$passwordLength)?>
                     </div>
                     <div class="form-group">
                         <label for="cpass">Confirma tu Contraseña</label>
                         <input type="password" name="cpass" id="cpass" required autocomplete="off">
+                        <?php echo $account->getErrorMessage(Constant::$passNotMatch)?>
                     </div>
 
                     <div class="s-password">
