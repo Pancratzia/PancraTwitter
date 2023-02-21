@@ -10,7 +10,10 @@ if(is_post_request()){
 
     $username = $account->generateUsername($firstName, $lastName);
     
-    $account ->register($firstName, $lastName, $username, $email, $pass, $cpass);
+    $success = $account ->register($firstName, $lastName, $username, $email, $pass, $cpass);
+    if($success){
+        //se procesa
+    }
 }
 
 ?>
@@ -31,17 +34,17 @@ if(is_post_request()){
 
                     <div class="form-group">
                         <label for="firstName">Nombre</label>
-                        <input type="text" name="firstName" id="firstName" required autocomplete="off">
+                        <input type="text" name="firstName" value="<?php getInputValue("firstName")?>" id="firstName" required autocomplete="off">
                         <?php echo $account->getErrorMessage(Constant::$firstNameCharacters)?>
                     </div>
                     <div class="form-group">
                         <label for="lastName">Apellido</label>
-                        <input type="text" name="lastName" id="lastName" required autocomplete="off">
+                        <input type="text" name="lastName" value="<?php getInputValue("lastName")?>"  id="lastName" required autocomplete="off">
                         <?php echo $account->getErrorMessage(Constant::$lastNameCharacters)?>
                     </div>
                     <div class="form-group">
                         <label for="email">Correo</label>
-                        <input type="email" name="email" id="email" required autocomplete="off">
+                        <input type="email" name="email" id="email" required autocomplete="off" value="<?php getInputValue("email")?>" >
                         <?php echo $account->getErrorMessage(Constant::$emailInUse)?>
                         <?php echo $account->getErrorMessage(Constant::$emailInvalid)?>
                     </div>

@@ -16,6 +16,16 @@ class Account
         $this->validateLasttName($lastName);
         $this->validateEmail($email);
         $this->validatePassword($pass, $cpass);
+
+        if(empty($this->errorArray)){
+            return $this->insertUserDetails($firstName, $lastName, $username, $email, $pass);
+        }else{
+            return true;
+        }
+    }
+
+    public function insertUserDetails($firstName, $lastName, $username, $email, $pass){
+        return true;
     }
 
     private function validateFirstName($firstName)
@@ -60,7 +70,7 @@ class Account
         if (!preg_match("/^[a-zA-Z0-9]*$/", $pass)) {
             return array_push($this->errorArray, Constant::$passwordNotAlphanumeric);
         }
-        if ($this->length($pass, 6, 25)) {
+        if (!$this->length($pass, 6, 25)) {
             return array_push($this->errorArray, Constant::$passwordLength);
         }
     
