@@ -25,7 +25,31 @@ class Account
     }
 
     public function insertUserDetails($firstName, $lastName, $username, $email, $pass){
-        return true;
+        $pass_hash= password_hash($pass, PASSWORD_BCRYPT);
+        $rand=rand(0,2);
+        if($rand==0){
+            $profilePic="frontend/assets/images/defaultProfilePic.png";
+            $profileCover="frontend/assets/images/backgroundCoverPic.svg";
+        }else if($rand==1){
+            $profilePic="frontend/assets/images/defaultPic.svg";
+            $profileCover="frontend/assets/images/backgroundImage.svg";
+        }else if($rand==2){
+            $profilePic="frontend/assets/images/profilePic.jpeg";
+            $profileCover="frontend/assets/images/backgroundCoverPic.svg";
+        }
+
+        $stmt=$this->pdo->prepare("INSERT INTO users(firstName, lastName, username, email, password, profileImage, profileCover) VALUES(:firstName, :lastName, :username, :email, :password, :profileImage, :profileCover)");
+        $stmt->bindParam(':firstName', $firstName, PDO::PARAM_STR);
+        $stmt->bindParam(':lastName', $lastName, PDO::PARAM_STR);
+        $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->bindParam(':password', $pass_hash, PDO::PARAM_STR);
+        $stmt->bindParam(':profileImage', $profilePic, PDO::PARAM_STR);
+        $stmt->bindParam(':profileCover', $profileCover, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $this->pdo->lastInsertId();
+
     }
 
     private function validateFirstName($firstName)

@@ -12,7 +12,12 @@ if(is_post_request()){
     
     $success = $account ->register($firstName, $lastName, $username, $email, $pass, $cpass);
     if($success){
-        //se procesa
+        session_regenerate_id();
+        $_SESSION['userLoggedIn'] = $success;
+        if(isset($_POST['remember'])){
+            $_SESSION['rememberMe'] = $_POST['remember'];
+        }
+        redirect_to(url_for('verification'));
     }
 }
 
