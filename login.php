@@ -35,7 +35,7 @@
                 </form>
             </div>
             <footer class="form-footer">
-                <p>¿No tienes una cuenta? <a href="signup.php">Regístrate Aquí</a></p>
+                <p>¿No tienes una cuenta? <a href="signup">Regístrate Aquí</a></p>
             </footer>
         </div>
         <div class="margin-bottom-div"></div>

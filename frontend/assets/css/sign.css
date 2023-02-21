@@ -73,8 +73,12 @@ nav.nav-header-sign__up ul li:last-child{
     grid-template-rows: 2fr 100px;
     
 }
-form-container{
+.form-container{
     padding-bottom: 3rem;
+}
+.form-container.verificationPage{
+    display: flex;
+    text-align: center;
 }
 
 .form-container .form-content{

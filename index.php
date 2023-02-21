@@ -34,8 +34,8 @@ require_once('backend/shared/header.php');
                     </h2>
                     <h5>¡Únete al PancraTwitter!</h5>
                     <div class="s-in-wrapper">
-                        <a href="signup.php" class="btn-link sign-up-btn">Regístrate</a>
-                        <a href="login.php" class="btn-link log-in-btn">Iniciar Sesión</a>
+                        <a href="signup" class="btn-link sign-up-btn">Regístrate</a>
+                        <a href="login" class="btn-link log-in-btn">Iniciar Sesión</a>
                     </div>
                 </div>
             </div>

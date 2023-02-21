@@ -11,7 +11,7 @@ function getInputValue($name){
 }
 
 function url_for($script){
-    return WWW_ROOT.$script;
+    return "http://".$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/'.$script;
 }
 
 function redirect_to($location){

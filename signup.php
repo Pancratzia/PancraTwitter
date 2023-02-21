@@ -81,7 +81,7 @@ if(is_post_request()){
                 </form>
             </div>
             <footer class="form-footer">
-                <p>¿Ya tienes una cuenta? <a href="login.php">Ingresa Aquí</a></p>
+                <p>¿Ya tienes una cuenta? <a href="login">Ingresa Aquí</a></p>
             </footer>
         </div>
         <div class="margin-bottom-div"></div>
