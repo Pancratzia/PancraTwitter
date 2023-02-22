@@ -4,6 +4,10 @@ require_once('backend/initialize.php');
 if(isset($_SESSION['userLoggedIn'])){
     $user_id=$_SESSION['userLoggedIn'];
     $user = $loadFromUser->userData($user_id);
+    $link = Verify::generateLink();
+    $message = "".$user['firstName'].", tu cuenta ha sido creada con éxito y necesita ser verificada. Presiona el siguiente link para verificar tu cuenta: <a href='http://localhost/pancratwitter/verification/$link'>Verificación</a>";
+    $subject="[PancraTwitter] Por favor verifica tu cuenta";
+    $verify->sendToMail($user['email'], $message, $subject);
 }else{
     redirect_to(url_for('index'));
 }
